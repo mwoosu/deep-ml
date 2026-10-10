@@ -9,13 +9,6 @@ def transpose_matrix(a: list[list[int|float]]) -> list[list[int|float]]:
         The transposed matrix of shape (n, m)
     """
     # Your code here
-    b = []
-    for i in range(len(a[0])):
-        b.append([])
-
-    for row in a:
-        for i in range(len(row)):
-            b[i].append(row[i])
-
-    return b
+    return [[a[i][j] for i in range(len(a))]
+            for j in range(len(a[0]))]
     pass
