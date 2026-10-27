@@ -10,13 +10,4 @@ def cosine_similarity(v1, v2):
 		The cosine_similarity of the two vectors.
 	"""
 	# Implement your code here
-	v1_norm = 0 
-	v2_norm = 0
-
-	for i in v1:
-		v1_norm += (i*i)
-
-	for j in v2:
-		v2_norm += (j*j)
-
-	return np.dot(v1, v2)/((v1_norm**0.5)*(v2_norm**0.5))
+	return np.dot(v1, v2)/(np.linalg.norm(v1)*np.linalg.norm(v2))
