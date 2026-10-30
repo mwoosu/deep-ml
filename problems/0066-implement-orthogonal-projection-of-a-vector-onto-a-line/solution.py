@@ -7,6 +7,8 @@ def orthogonal_projection(v, L):
 	:param L: The line vector defining the direction of projection
 	:return: List representing the projection of v onto L
 	"""
+	dot = sum(i*j for (i,j) in zip(v, L))
+	denominator = sum(j*j for j in L)
 
-	return [i*j/np.linalg.norm(L) for (i, j) in zip(v, L)]
+	return [dot / denominator * j for j in L]
 	pass
