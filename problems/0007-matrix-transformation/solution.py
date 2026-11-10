@@ -1,10 +1,9 @@
 import numpy as np
 
 def transform_matrix(A: list[list[int|float]], T: list[list[int|float]], S: list[list[int|float]]) -> list[list[int|float]]:
-    if np.linalg.det(T) == 0 or np.linalg.det(S) == 0:
+    
+    if np.linalg.det(A) == 0 or np.linalg.det(S) == 0:
         return -1
+    
 
-    T_inv = np.linalg.inv(T)
-    result = np.dot(np.dot(T_inv, A), S)
-
-    return result.tolist()
+    return np.dot(np.dot(np.linalg.inv(T), A), S)
